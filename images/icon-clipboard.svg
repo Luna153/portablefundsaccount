@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.91 43.93">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="faq_投資警語" data-name="faq/投資警語">
+    <g>
+      <circle class="cls-1" cx="25.54" cy="35.56" r="7.87"/>
+      <g>
+        <path class="cls-1" d="m4.79,5.51H1.93c-.79,0-1.43.64-1.43,1.43v32.2c0,.79.64,1.43,1.43,1.43h14.12"/>
+        <path class="cls-1" d="m26.26,5.51h2.86c.79,0,1.43.64,1.43,1.43v19.13"/>
+        <path class="cls-1" d="m21.97,3.36h-2.15v-1.43c0-.79-.64-1.43-1.43-1.43h-5.72c-.79,0-1.43.64-1.43,1.43v1.43h-2.15c-.79,0-1.43.64-1.43,1.43v2.15h15.74v-2.15c0-.79-.64-1.43-1.43-1.43Z"/>
+      </g>
+      <line class="cls-1" x1="9.8" y1="12.66" x2="21.25" y2="12.66"/>
+      <line class="cls-1" x1="5.51" y1="18.39" x2="25.54" y2="18.39"/>
+      <line class="cls-1" x1="5.51" y1="22.68" x2="25.54" y2="22.68"/>
+      <line class="cls-1" x1="19.05" y1="26.97" x2="5.51" y2="26.97"/>
+      <line class="cls-1" x1="15.71" y1="31.27" x2="5.51" y2="31.27"/>
+      <polyline class="cls-1" points="22.32 35.56 24.47 37.71 28.76 33.41"/>
+    </g>
+  </g>
+</svg>

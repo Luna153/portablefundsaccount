@@ -1,0 +1,43 @@
+extends _layout.pug
+
+append vars
+
+block content
+
+  main.index
+    //- KV & 跨行理財
+    +section-kv()
+    //- 獨家優勢
+    +section-exclusive()
+    //- 快速啟用
+    +section-activation()
+    //- 帳戶優惠
+    +section-benefits()
+    //- 首頁「常見問題」
+    section.section.section-faq#section-faq
+      .wrap__inner
+        .align-center
+          h2.heading2(data-aos="fade-up" data-aos-duration="1200") FAQ
+        +faq-toggle(faq_data, '常見問題')
+      .section-faq__decobox
+        .section-faq__paintings.hidden-min
+          img(src=root+'images/img-bg-paintings.svg' alt="")
+        .section-faq__pot-plant.hidden-min
+          img(src=root+'images/img-bg-pot-plant.svg' alt="")
+
+    +section-notice()
+
+append lightbox
+  include component/_lightbox.pug
+
+append script
+  script.
+    // Loading
+    $(window).on("load", function () {
+      $.Window = $(window);
+      $.Body = $('body');
+
+      $('body').css('visibility', 'visible');
+      $(".loader").delay(500).fadeOut("slow");
+      $("#overlayer").delay(500).fadeOut("slow");
+    })

@@ -1,0 +1,89 @@
+
+include _component.pug
+include _data.pug
+
+doctype html
+html(lang="zh-Hant")
+  block vars
+    - var author = '永豐銀行'
+    - var web_title = '永豐退休信託帳戶可攜 | 豐投資 x 攜著GO'
+    - var web_url = 'https://bank.sinopac.com/sinopacBT/webevents/portablefundsaccount/index.html'
+    - var og_url = 'https://bank.sinopac.com/sinopacBT/webevents/portablefundsaccount/index.html'
+    - var og_title = '永豐退休信託帳戶可攜 | 豐投資 x 攜著GO'
+    - var og_image = 'https://bank.sinopac.com/sinopacBT/webevents/portablefundsaccount/images/fb-share.png'
+    - var og_desc = '永豐退休信託帳戶可攜服務強勢登場！升級理財自由身，跨行移轉基金：提供投資人將他行帳戶中的定時(不)定額基金庫存移轉、整併至永豐銀行可攜式退休信託帳戶，完整掌握所有基金的投資明細與資產累積狀況。現在轉入他行基金憑證，享基金定時(不)定額申購手續費0元起！'
+    - var schema_classify = '永豐退休信託帳戶可攜 | 豐投資 x 攜著GO'
+    - var date_publish = ''
+    - var keywords = ''
+    - var root = './'
+    - var pageName = ''
+
+  head
+    block head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover')
+      meta(name='format-detection' content='telephone=no')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge,Chrome=1')
+      //- 不緩存
+      meta(http-equiv='pragma' content='no-cache')
+      meta(http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate')
+      meta(http-equiv='expires' content='0')
+      //- meta info
+      title #{schema_classify ? schema_classify : "" }
+      meta(name='title' content=(schema_classify ? schema_classify : '' ))
+      meta(name='description', content=og_desc ? og_desc : '')
+      meta(name='og:description', content=og_desc ? og_desc : '')
+      meta(property='og:title', content=(og_title ? og_title : ''))
+      meta(property='og:url', content=og_url ? og_url : '')
+      meta(property='og:image', content=og_image ? og_image : '')
+      meta(property='og:type' content='website')
+      meta(property='og:locale' content='zh_TW')
+      meta(name='keywords' content=keywords)
+      meta(name='author', content=author)
+      meta(name='copyright', content=author)
+      //- 標準網址
+      link(rel='canonical' href=web_url)
+      //- favicon
+      link(rel='shortcut icon' href='https://mma.sinopac.com/images/favicon.ico')
+      //- css
+      link(rel='stylesheet' href=(root + 'css/splide.min.css'))
+      //- link(rel='stylesheet' href=(root + 'css/swiper.min.css'))
+      link(rel='stylesheet' href=(root + 'css/aos.css'))
+      link(rel='stylesheet' href=(root + 'css/all.css?v=<?=time()?'))
+      //- 數位足跡
+      //- script(src= root +'js/sensorstrackerV105.js' type="text/javascript")
+      //- script(type="application/ld+json") {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"申請個人信用貸款需要準備哪些文件?","acceptedAnswer":{"@type":"Answer","text":"1. 身分證正反面影本 \n2. 收入證明 \n若您是永豐的薪轉戶，可以免附收入證明，會更加快您的審核速度喔!"}},{"@type":"Question","name":"我有其他銀行的信用卡循環跟信用貸款，可以一起做整合嗎?","acceptedAnswer":{"@type":"Answer","text":"可以的! 歡迎您來電 02-2505-9999 或 0800-388-288(限市話)，或點擊<a href=\"https://mma.sinopac.com/Share/Activity/PettyProject.aspx?LinkSource=&aoid=&refid=\">專人與我聯絡</a>留下資料，我們將提供適合您的整合方案，幫您降低月付金，輕鬆減擔"}},{"@type":"Question","name":"「分期型信貸」跟「額度型信貸」有什麼不同?","acceptedAnswer":{"@type":"Answer","text":"● 分期型信貸：是將整筆借款一次撥入帳戶，之後每個月本息均攤還款。 \u000b\n● 額度型信貸(私房錢)：銀行核給一筆信貸額度。您可以在額度內循環動用，還款之後額度立即回復。還可以將該連結額度的帳戶設定為證券交割帳戶。也可以用來設定扣繳各項日常費用(水電、瓦斯、電話費等等..)。"}}]}
+
+  body
+    loading
+      #overlayer
+      .loader
+        .sinopac-logo
+          img(src=root+"/images/sinopac-logo-black.svg")
+        .loading
+          img(src=root+"/images/S-loading.svg")
+
+    .wrap
+      block header
+        include layout/_header.pug
+      .content
+        block content
+
+      block footer
+        include layout/_footer.pug
+
+    block lightbox
+
+    block script
+      script(src= root +"js/jquery-3.3.1.min.securejs" type="text/javascript")
+      script(src= root +"js/toggle.securejs" type="text/javascript")
+      //- script(src= root +'js/swiper-bundle.min.securejs' type="text/javascript")
+      script(src= root +"js/splide.min.securejs" type="text/javascript")
+      script(src= root +'js/aos.securejs' type="text/javascript")
+      //- script(src= root +"js/dropdown.securejs" type="text/javascript")
+      script(src= root +"js/lightbox.securejs" type="text/javascript")
+      //- script(src= root +"js/loan_calculator.securejs" type="text/javascript")
+      //- script(src= root +"js/loan_calculator.js" type="text/javascript")
+      //- script(src= root +"js/rtnValue_calculator.securejs" type="text/javascript")
+      script(src= root +"js/index.securejs" type="text/javascript")
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.54 77.06">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_4" data-name="圖層 4">
+    <g>
+      <circle class="cls-1" cx="44.78" cy="62.3" r="13.76"/>
+      <g>
+        <path class="cls-1" d="m8.51,9.76H3.5c-1.38,0-2.5,1.13-2.5,2.5v56.29c0,1.38,1.13,2.5,2.5,2.5h24.69"/>
+        <path class="cls-1" d="m46.04,9.76h5c1.38,0,2.5,1.13,2.5,2.5v33.45"/>
+        <path class="cls-1" d="m38.53,6h-3.75v-2.5c0-1.38-1.12-2.5-2.5-2.5h-10.01c-1.38,0-2.5,1.12-2.5,2.5v2.5h-3.75c-1.38,0-2.5,1.12-2.5,2.5v3.75h27.52v-3.75c0-1.38-1.12-2.5-2.5-2.5Z"/>
+      </g>
+      <line class="cls-1" x1="17.26" y1="22.27" x2="37.28" y2="22.27"/>
+      <line class="cls-1" x1="9.76" y1="32.27" x2="44.78" y2="32.27"/>
+      <line class="cls-1" x1="9.76" y1="39.78" x2="44.78" y2="39.78"/>
+      <line class="cls-1" x1="33.43" y1="47.29" x2="9.76" y2="47.29"/>
+      <line class="cls-1" x1="27.6" y1="54.79" x2="9.76" y2="54.79"/>
+      <polyline class="cls-1" points="39.15 62.3 42.91 66.05 50.41 58.54"/>
+    </g>
+  </g>
+</svg>

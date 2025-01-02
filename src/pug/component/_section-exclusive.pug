@@ -1,0 +1,45 @@
+mixin section-exclusive()
+  section.section.section-exclusive#section-exclusive
+    .wrap__inner
+      .align-center
+        h2.heading2(data-aos="fade-up" data-aos-duration="1200") 獨家
+          span.fc-brown 優勢
+        h3.heading3(data-aos="fade-up" data-aos-duration="1500") 「退休信託帳戶可攜」投資首選永豐！
+      .splide.slider-exclusive
+        .splide__arrows
+          button.splide__arrow.splide__arrow--prev
+            img(src=root+'images/icon-nav-left--brown.svg' alt="")
+          button.splide__arrow.splide__arrow--next
+            img(src=root+'images/icon-nav-right--brown.svg' alt="")
+        .splide__track
+          ol.row.exclusive-card.splide__list
+            .splide__slide(data-aos="fade-up" data-aos-duration="1200")
+              li.exclusive-card__card-item
+                .exclusive-card__card-inner
+                  img.exclusive-card__img(src=root+'images/img-exclusive-1.svg' alt="")
+                  .exclusive-card__title-wrap
+                    .exclusive-card__title 線上啟動投資，數位行
+                    .exclusive-card__content 投資「退休可攜基金」庫存帶著走，便利攜入/攜出參與退休可攜計畫之國內銀行，於永豐線上集中管理基金庫存
+
+            .splide__slide(data-aos="fade-up" data-aos-duration="1600")
+              li.exclusive-card__card-item
+                .exclusive-card__card-inner
+                  img.exclusive-card__img(src=root+'images/img-exclusive-2.svg' alt="")
+                  .exclusive-card__title-wrap
+                    .exclusive-card__title 擇日自動扣款，方便選
+                    .exclusive-card__content 退休可攜基金可透過日日扣款分散投資，自選每月扣款次數/日期，不需花過多時間研究投資進場時機，用最省時省力方式賺取合理報酬
+
+            .splide__slide(data-aos="fade-up" data-aos-duration="2000")
+              li.exclusive-card__card-item
+                .exclusive-card__card-inner
+                  img.exclusive-card__img(src=root+'images/img-exclusive-3.svg' alt="")
+                  .exclusive-card__title-wrap
+                    .exclusive-card__title 定時(不)定額，個性投
+                    .exclusive-card__content 適合薪資月領上班族，可自行設定不同漲跌幅度下，約定加減/碼扣款之金額，減少盯盤時間
+    .section-exclusive__decobox
+      .section-exclusive__lamps.hidden-min
+        img(src=root+'images/img-bg-lamps.svg' alt="")
+      .section-exclusive__decos.hidden-min
+        img(src=root+'images/img-bg-decos.svg' alt="")
+      .section-exclusive__table.hidden-min
+        img(src=root+'images/img-bg-table.svg' alt="")

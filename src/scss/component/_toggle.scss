@@ -1,0 +1,206 @@
+.toggle {
+  &__trigger {
+    transition: opacity 0.25s $cubic;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+    &-icon {
+      transition: transform 0.3s $cubic;
+
+      .toggle--active & {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s $cubic;
+
+    &[data-toggle-line] {
+      max-height: none;
+    }
+
+    .#{$namespace}toggle--active & {
+      max-height: fit-content;
+      -webkit-line-clamp: inherit;
+      animation: visible 0.1s 0.35s both;
+
+      @at-root .toggle--visible#{&} {
+        animation: fadeIn 0.35s 0.1s backwards;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+.header-toggle {
+  &__content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s $cubic;
+
+    &[data-toggle-line] {
+      max-height: none;
+    }
+
+    .#{$namespace}toggle--active & {
+      max-height: 2000px;
+      color: $white;
+      -webkit-line-clamp: inherit;
+      animation: visible 0.1s 0.35s both;
+      .header-toggle__item {
+        padding: 1.375em 15px;
+        display: block;
+        line-height: 1;
+      }
+
+      @at-root .toggle--visible#{&} {
+        animation: fadeIn 0.35s 0.1s backwards;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+@keyframes visible {
+  to {
+    overflow: visible;
+  }
+}
+
+.faq-toggle {
+  background-color: $white;
+  border: 1px solid $brown;
+  color: $brown;
+  font-size: px-em(24);
+  line-height: 1.5;
+  font-weight: $bold;
+  border-radius: 12px;
+  transition: background-color 0.25s $cubic, opacity 0.25s $cubic;
+  margin-bottom: $gap-base-unit * 5;
+  @include breakpoint(sm) {
+    // font-size: px-em(21);
+  }
+
+  &__design {
+    position: relative;
+    max-width: 1060px;
+    margin-left: auto;
+    margin-right: auto;
+    &-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../images/img-faq-design.svg") no-repeat;
+      @include size(56.5px, 50px);
+      @include breakpoint(sm) {
+        width: vwm(56.5px);
+        heihgt: vwm(50px);
+      }
+    }
+  }
+
+  @include active-hover {
+    opacity: 0.8;
+  }
+
+  &.toggle--active {
+    background-color: $white;
+    color: $light-black;
+    @include active-hover {
+      opacity: 1;
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: $gap-base-unit * 6 $gap-base-unit * 8;
+    padding-left: 64px;
+    @include breakpoint(sm) {
+      padding: $gap-base-unit * 4;
+      padding-left: vwm(64px);
+    }
+    p {
+      display: flex;
+      font-weight: 900;
+      font-size: px-em(21, 21);
+      @include breakpoint(sm) {
+        font-size: px-em(18, 24);
+      }
+    }
+    span {
+      display: flex;
+      flex: 1 0 auto;
+    }
+
+    .toggle--active & {
+      color: $brown;
+    }
+
+    @include breakpoint(lg) {
+      // padding: $gap-base-unit * 4;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      font-size: 1.4em;
+      margin-left: $gap-base-unit * 4;
+      transform: rotate(-90deg);
+
+      .toggle--active & {
+      }
+    }
+  }
+
+  &__content {
+    // font-size: px-em(21);
+    padding-right: $gap-base-unit * 8;
+    font-weight: normal;
+    padding-left: $gap-base-unit * 30;
+
+    opacity: 0;
+    word-break: break-word;
+    transition: max-height 0.15s $cubic, opacity 0.1s $cubic,
+      padding 0.15s $cubic;
+    line-height: 1.5;
+
+    // @include breakpoint(lg) {
+    //   padding-left: 8%;
+    //   padding-right: $gap-base-unit * 4;
+    // }
+
+    @include breakpoint(sm) {
+      padding-left: vwm(120px);
+      padding-right: 8%;
+    }
+
+    p {
+      font-size: px-em(18,21);
+      @include breakpoint(sm) {
+        font-size: px-em(16,24);
+      }
+    }
+    .toggle--active & {
+      // margin-top: $gap-base-unit * 6;
+      padding-bottom: $gap-base-unit * 6;
+      opacity: 1;
+      transition-delay: 0, 0.05s, 0;
+      transition-duration: 0.3s, 0.25s, 0.3s;
+
+      @include breakpoint(lg) {
+        // margin-top: $gap-base-unit * 4;
+        padding-bottom: $gap-base-unit * 4;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+//- var datas = [{
+//-   cat: '常見問題',
+//-   title: '題目?',
+//-   content: '內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待補內容待'
+//- }]
+mixin faq-toggle(datas, cat)
+  each data in datas
+    if data.cat == cat
+      .toggle.faq-toggle.faq-toggle__design
+        .faq-toggle__design-img
+        .faq-toggle__icon-img
+        h3.toggle__trigger.faq-toggle__trigger!=data.title
+          i.icon-md.toggle__trigger-icon.faq-toggle__trigger-icon.material-icons-outlined(data-icon='expand_circle_down')
+        .toggle__content.faq-toggle__content!=data.content

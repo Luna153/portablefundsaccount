@@ -1,0 +1,158 @@
+.lightbox {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  overflow-x: hidden;
+  background-color: $bg-popup;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s $cubic;
+  z-index: $z-lightbox;
+  visibility: hidden;
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  &__content {
+    margin-top: clamp(40px,12.5vh,80px);
+    @include breakpoint(md) {
+      // margin-top: auto;
+    }
+    ol {
+      li {
+        ol {
+          li {
+            list-style: none;
+          }
+        }
+      }
+      & > li {
+        list-style: decimal;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    max-width: 991px;
+    transition: transform 0.2s ease-out;
+    margin: 10px auto;
+    background: $white;
+    padding: px-em(30) px-em(60);
+    border-radius: px-em(32);
+    max-height: 120vh;
+
+    @include breakpoint(md) {
+      max-width: 95%;
+    }
+
+    @include breakpoint(sm) {
+      max-height: 80vh;
+    }
+
+    // &::-webkit-scrollbar {
+    //   width: 4px;
+    //   background-color: $light-black;
+    // }
+
+    // 迷你尺寸
+    // .lightbox--sm & {
+    //   max-width: $lightbox-size-sm;
+    // }
+
+    // .lightbox--m & {
+    //   max-width: $lightbox-size-m;
+    // }
+
+    // .lightbox--active & {
+    //   animation: fadeInDown 0.35s;
+    // }
+  }
+
+  &__btn-close {
+    background: url("../images/icon-close.svg") no-repeat;
+    display: block;
+    position: absolute;
+    top: $gap-base-unit * 8;
+    right: $gap-base-unit * 8;
+    @include size(36px);
+    padding: 5px;
+    line-height: 1;
+    z-index: 1;
+    @include breakpoint(sm) {
+      // top: $gap-base-unit * 6;
+      right: $gap-base-unit * 6;
+      @include size(28px);
+    }
+  }
+
+  &__head {
+    color: $color-brown-mid;
+    font-size: clamp(24px, 5vw, 50px);
+    font-family: "MaruM", "Noto Sans TC", sans-serif;
+    line-height: (25/20);
+    font-weight: $bold;
+    text-align: center;
+    padding-bottom: $gap-base-unit * 5;
+    padding-right: $gap-base-unit * 7;
+
+    @include breakpoint(sm) {
+      // font-size: px-em(32);
+    }
+
+    @include breakpoint(xs) {
+      // padding-right: 50px;
+    }
+  }
+
+  &__body {
+    color: $light-black;
+    line-height: 1.75;
+    .fc-reminder {
+      color: #E7231D;
+    }
+  }
+
+}
+
+// Lightbox 客製
+.lightbox {
+	.container {
+		height: 100%;
+		.lightbox__content {
+			height: 100%;
+		}
+	}
+	.lightbox__box {
+		border-radius: px-em(30,20);
+		display: block;
+
+    @include breakpoint(sm) {
+      position: absolute;
+      min-height: 80vh;
+      top: 10vh;
+      right: clamp(16px, 5vw, 80px);
+      left: clamp(16px, 5vw, 80px);
+      bottom: 10vh;
+    }
+
+		.lightbox__body {
+			@include breakpoint(sm) {
+        position: absolute;
+        top: 100px;
+        left: clamp(16px, 5vw, 80px);
+        right: clamp(16px, 5vw, 80px);
+        bottom: clamp(16px, 5vw, 60px);
+        overflow-y: auto;
+			}
+      @include breakpoint(xs) {
+        font-size: 14px;
+      }
+		}
+	}
+}

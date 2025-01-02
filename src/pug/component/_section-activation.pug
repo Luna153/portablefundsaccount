@@ -1,0 +1,90 @@
+mixin section-activation()
+  section.section.section-activation#section-activation
+    .wrap__inner
+      .align-center
+        h2.heading2(data-aos="fade-up" data-aos-duration="1200") 快速啟用
+        h3.heading3(data-aos="fade-up" data-aos-duration="1500") 加入可攜最重要，從容啟用輕巧投資模式
+
+      .con__tableBox
+        .con__table--box
+          ul.table__nav
+            li.tabs_btn.btn-round.active(data-tab='tab-nonCustomer') 非本行客戶攜入庫存
+            li.tabs_btn.btn-round(data-tab='tab-customer') 本行客戶申購基金
+
+          //非本行客戶攜入庫存
+          #tab-nonCustomer.table__con.active
+            .table__container
+              .splide.slider-activation
+                .splide__track
+                  ul.row.imglist.splide__list
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-non-customer-1.png' alt='')
+                        .activate-steps--text
+                          .step STEP 1
+                          .desc 線上
+                            a(href='https://mma.sinopac.com/Fund/FundQueries/TrustApply_First.aspx' target='_blank') 開立永豐信託帳戶
+
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-non-customer-2.png' alt='')
+                        .activate-steps--text
+                          .step STEP 2
+                          .desc 線上簽署
+                            a(href='https://mma.sinopac.com/Fund/FundQueries/PortableStatus_First.aspx' target='_blank') 退休帳戶可攜約定條款
+
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-non-customer-3.png' alt='')
+                        .activate-steps--text
+                          .step STEP 3
+                          .desc 下載信託帳戶退休可攜開戶證明書
+
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-non-customer-4.png' alt='')
+                        .activate-steps--text
+                          .step STEP 4
+                          .desc 攜帶永豐銀行退休信託帳戶可攜開戶證明書至移出銀行，申請退休可攜基金移入永豐銀行
+
+          //本行客戶申購基金
+          #tab-customer.table__con
+            .table__container
+              .splide.slider-activation
+                .splide__track
+                  ul.row.imglist.splide__list
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-customer-1.png' alt='')
+                        .activate-steps--text
+                          .step STEP 1
+                          .desc 線上簽署
+                            a(href='https://mma.sinopac.com/Fund/FundQueries/PortableStatus_First.aspx' target='_blank') 退休帳戶可攜約定條款
+
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-customer-2.png' alt='')
+                        .activate-steps--text
+                          .step STEP 2
+                          .desc 線上約定
+                            a(href='https://mma.sinopac.com/Fund/FundTransactions/cAuto_FirstN.aspx' target='_blank') 定時(不)定額投資方式
+
+                    li.splide__slide
+                      .activate-steps
+                        .activate-steps--screenshot
+                          img(src=root+'images/img-customer-3.png' alt='')
+                        .activate-steps--text
+                          .step STEP 3
+                          .desc 退休可攜基金瀏覽選擇
+
+    .section-activation__decobox
+      .section-activation__cat-sofa.hidden-min
+        img(src=root+'images/img-bg-cat-sofa.svg' alt="")
+      .section-activation__cactus.hidden-min
+        img(src=root+'images/img-bg-cactus.svg' alt="")

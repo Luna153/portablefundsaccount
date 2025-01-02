@@ -1,0 +1,1190 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3em;
+}
+// @supports (scrollbar-gutter: stable) {
+//   html {
+//     scrollbar-gutter: stable;
+//   }
+// }
+body {
+  height: 100%;
+}
+
+br {
+  &.br {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: block;
+    }
+  }
+}
+// 浮動按鈕
+.fixedIcon {
+  &__area {
+    background: url(../images/img-fixedIconBg.svg) no-repeat;
+    background-size: cover;
+    display: flex;
+    position: fixed;
+    bottom: 10%;
+    right: 2.5vw;
+    transition: transform .2s;
+    @include size(180px,161px);
+    @include flex-center;
+    z-index: 7;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include breakpoint(sm) {
+      background: $btn-round-fill;
+      position: relative;
+      right: 0;
+      width: 100%;
+      height: vwm(160px);
+    }
+    a {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      @include flex-center;
+      @include breakpoint(sm) {
+        flex-direction: row;
+      }
+      img {
+        margin: px-em(5);
+        @include size(33px,43px);
+        @include breakpoint(sm) {
+          margin-right: vwm(16px);
+          @include size(vwm(58px),vwm(75px));
+        }
+      }
+      span {
+        max-width: 6em;
+        @include breakpoint(sm) {
+          font-size: clamp(18px, 5vw, 35px);
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.button-group {
+  @include flex-center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  @include breakpoint(sm) {
+    flex-direction: column;
+  }
+}
+
+// KV
+// ---------------------------------
+.section-kv {
+  background-image: url(../images/img-page-bg.svg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #EBD4A9;
+  @include breakpoint(sm) {
+    background-image: url(../images/img-page-bg-mobile.svg);
+    background-size: contain;
+  }
+  .wrap__inner-kv {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: px-em(16);
+    padding-right: px-em(16);
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+  // 背景插圖
+  &__decobox{
+		> * {
+			position: absolute;
+		}
+	}
+  &__handbag {
+    $w: 129px;
+    $h: 120px;
+		@include size($w, $h);
+		top: 10%;
+		right: calc(50% + #{px-em(-680)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+    @include breakpoint(xl) {
+      $w: 119px;
+      $h: 111px;
+      @include size($w, $h);
+      right: calc(50% + #{px-em(-420)} - #{$w});
+    }
+	}
+  &__pens {
+    $w: 156px;
+    $h: 277px;
+		@include size($w, $h);
+		bottom: 170px;
+		left: calc(50% + #{px-em(-690)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+	}
+  // 主視覺
+  &__title {
+    display: flex;
+    position: relative;
+    padding-bottom: px-em(200);
+    width: 100%;
+    // height: 90vh;
+    // max-height: px-em(875);
+    @include breakpoint(lg) {
+      padding-bottom: vwm(40px);
+      width: auto;
+      margin-right: -15vw;
+      margin-left: -12.5vw;
+    }
+    @include breakpoint(sm) {
+      flex-direction: column;
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+
+    // 標題文字
+    .kv-maintitle {
+      &__wrap {
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin-left: -5%;
+        margin-right: -2%;
+        padding-top: px-em(60);
+
+        @include breakpoint(sm) {
+          align-self: center;
+          margin: 0;
+          padding-top: px-em(30);
+          width: 72.5%;
+          gap: px-em(16);
+          z-index: 1;
+        }
+        @media screen and (max-width: 576px) {
+          width: 85%;
+        }
+      }
+
+      &__group {
+        color: #3f3f3f;
+        font-family: "MaruM", "Noto Sans TC", sans-serif;
+        font-weight: bold;
+        font-size: px-em(28);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint(md) {
+          // padding-top: px-em(16);
+        }
+        // 旗幟
+        .kv-img--ribbon {
+          width: 80%;
+          margin-bottom: px-em(6);
+          animation: wave 3s;
+          animation-delay: 2s;
+        }
+        // 基金攜著GO
+        .kv-img--topic {
+          margin-bottom: px-em(6);
+          animation: fadeUp 2s;
+        }
+        // 來永豐享基金定時(不)定額申購手續費
+        .kv-text {
+          font-size: 1.5vw;
+          // font-size: px-em(16);
+          margin-bottom: px-em(6);
+          animation: fadeUp 3s;
+          @include breakpoint(sm) {
+            font-size: 4vw;
+          }
+        }
+        // 0元
+        .kv-text-group {
+          display: flex;
+          align-items: flex-end;
+          margin-top: px-em(10);
+          margin-bottom: 40px;
+          margin-left: 1em;
+          animation: pulse 3s;
+          @include breakpoint (sm) {
+            margin-bottom: vw(40px);
+          }
+          .kv-img--zero {
+            width: clamp(80px, calc(1rem + 5vw), 106px);
+            animation: pulse 1s ease-in-out;
+            animation-delay: 3s;
+            @include breakpoint(sm) {
+              width: 15vw;
+            }
+          }
+        }
+        .btn-round {
+          font-size: 30px;
+          animation: fadeIn 4s;
+          @include breakpoint(md) {
+            font-size: vwm(20px);
+          }
+          @include breakpoint(sm) {
+            font-size: clamp(20px, calc(.5rem + 3vw), 30px);
+          }
+        }
+      }
+
+    }
+    // 插圖: 右側 女生
+    .kv-illustration1__wrap {
+      position: relative;
+      right: px-em(16);
+      // width: 52%;
+      justify-self: flex-end;
+      display: flex;
+      flex: 1 0 60%;
+      align-items: flex-start;
+      @include breakpoint(md) {
+        flex: 1 0 68%;
+      }
+      @include breakpoint(sm) {
+        left: 0;
+        right: 0;
+        margin-top: vwm(-280px);
+      }
+      .pieChart {
+        animation: fadeInUp 3s infinite;
+        animation-delay: .5s;
+      }
+      .barChart {
+        animation: fadeInUp 3s infinite;
+      }
+    }
+    // 插圖: 左側 貓
+    .kv-illustration2__wrap {
+      position: relative;
+      left: px-em(16);
+      top: px-em(72);
+      // width: 22%;
+      align-self: center;
+      flex: 1 0 22%;
+      animation: fadeIn 2s ease-in-out;
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+// 跨行理財
+// ---------------------------------
+.section-crossbank {
+  background-image: url(../images/pattern-crossbank.svg);
+  &.section {
+    padding-top: px-em(30);
+  }
+  .button-group {
+    row-gap: 2em;
+    column-gap: 4em;
+    @include breakpoint(sm) {
+      row-gap: vwm(24px);
+      column-gap: vwm(32px);
+      // width: vwm(460px);
+      margin: 0 auto;
+      align-items: stretch;
+      width: fit-content;
+    }
+    @include breakpoint(xs) {
+      width: 90%;
+    }
+  }
+  .btn-round {
+    width: 460px;
+    text-align: center;
+    @include breakpoint(sm) {
+      width: auto;
+    }
+  }
+}
+.slider-crossbank {
+  margin: 0 auto;
+  margin-bottom: 4em;
+}
+.crossbank-card {
+  .splide__slide {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    @include breakpoint(md) {
+      padding-top: vw(40px);
+      padding-bottom: vw(40px);
+    }
+    @include breakpoint(sm) {
+      padding-top: vwm(30px);
+    }
+  }
+  // 卡片
+  &__card-item {
+    cursor: pointer;
+    margin: 0 px-em(18);
+    // 翻轉卡片
+    // perspective: 1000px;
+    // animation: flipHint 0.5s ease infinite alternate;
+    // animation-duration: 1s;
+    // animation-delay: 2.3s;
+    @include breakpoint(md) {
+      margin: 0 px-em(16);
+    }
+  }
+  &__card-inner {
+    background: $white;
+    border: 7px solid $color-brown-mid;
+    border-radius: px-em(18);
+    margin: 0 auto;
+    aspect-ratio: 0.7125;
+    position: relative;
+    width: 100%;
+    perspective: 1000px;
+    // height: 100%;
+    text-align: center;
+    box-shadow: inset 0 0 20px #e8e8bc;
+    display: flex;
+    // 翻轉卡片
+
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    @include breakpoint(sm) {
+      border-width: vwm(10px);
+      width: 85%;
+      max-width: 400px;
+    }
+    @include breakpoint(xs) {
+      width: 90%;
+      max-width: 300px;
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+      // 翻轉卡片
+      transform: rotateX(0deg);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    .card-front {
+      // border: 10px solid $color-brown-light;
+      background-image: url("../images/img-card-frame.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 88%;
+      color: $color-brown-mid;
+      // margin: 1rem;
+      padding: 1rem 3.5rem;
+      @include breakpoint(lg) {
+        padding: vw(16px) vw(56px);
+      }
+      // @include breakpoint(ssm) {
+      //   padding: 1rem 2.5rem;
+      // }
+      h4 {
+        font-size: 45px;
+        font-family: "MaruM", "Noto Sans TC", sans-serif;
+        font-weight: bold;
+        max-width: 4.25em;
+        line-height: 1.2;
+        @include breakpoint(lg) {
+          font-size: vw(42.5px);
+        }
+        @include breakpoint(md) {
+          font-size: vw(40px);
+        }
+        @include breakpoint(sm) {
+          font-size: clamp(36px,8vw,48px)
+        }
+      }
+      hr {
+        border: none;
+        border-top: 2px solid $color-brown-mid;
+        // background-color: #ABAAAA;
+        height: 2px;
+        margin: 20px 0;
+        align-self: stretch;
+        @include breakpoint(sm) {
+          margin: 20px 40px;
+        }
+      }
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      padding: 1rem 2.5rem;
+      position: relative;
+      &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: 4px solid $color-brown-light;
+      }
+      &::before {
+        inset: 1rem;
+      }
+      &::after {
+        inset: calc(1rem + 8px);
+      }
+    }
+
+    p {
+      font-size: px-em(18);
+      font-weight: 500;
+      line-height: 1.45;
+      @include breakpoint(md) {
+        font-size: px-em(16);
+      }
+      // @include breakpoint(ssm) {
+      //   font-size: px-em(16);
+      // }
+      @include breakpoint(lg) {
+        font-size: vw(19px);
+      }
+      @include breakpoint(sm) {
+        font-size: clamp(15px,3vw,19px)
+      }
+      @include breakpoint(xs) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+// Desktop: 卡片hover
+@media (hover: hover) {
+  .crossbank-card {
+    &__card-item {
+      &:hover .crossbank-card__card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+// Mobile: 卡片click
+@media (hover: none) {
+  .crossbank-card {
+    &__card-item {
+      &.is-flipped {
+        .crossbank-card__card-inner {
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+}
+// 獨家優勢
+// ---------------------------------
+.section-exclusive {
+  background: $white;
+  min-height: 600px;
+  // 背景插圖
+  &__decobox{
+		> * {
+			position: absolute;
+		}
+	}
+  &__lamps {
+    $w: 388px;
+    $h: 194px;
+		@include size($w, $h);
+		top: 0;
+		right: calc(50% + #{px-em(-440)} - #{$w});
+	}
+  &__decos {
+    $w: 249px;
+    $h: 140px;
+		@include size($w, $h);
+		top: 175px;
+		left: calc(50% + #{px-em(-620)} - #{$w});
+		animation: float 6s ease-in-out infinite;
+	}
+  &__table {
+    $w: 223px;
+    $h: 300px;
+		@include size($w, $h);
+		bottom: 45px;
+		right: calc(50% + #{px-em(-642)} - #{$w});
+		animation: float2 6s ease-in-out infinite;
+	}
+}
+.slider-exclusive {
+  margin: 0 auto;
+}
+.exclusive-card {
+  &__card-item {
+    height: 100%;
+    @include breakpoint(sm) {
+      width: 70%;
+      margin: 0 auto;
+    }
+    @include breakpoint(xs) {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  .splide__slide {
+    &:not(:last-child) {
+      .exclusive-card__card-item {
+        border-right: 5px dotted #D7D5D1;
+        @include breakpoint(sm) {
+          border-right: none;
+        }
+      }
+    }
+  }
+  &__card-inner {
+    padding: 1rem 3rem;
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    @include breakpoint(sm) {
+      font-size: px-em(23);
+    }
+  }
+  &__content {
+    color: #3f3f3f;
+    font-size: px-em(18);
+    line-height: 1.75;
+    @include breakpoint(lg) {
+      font-size: vw(19px);
+    }
+    @include breakpoint(sm) {
+      font-size: clamp(15px,3vw,19px)
+    }
+    @include breakpoint(xs) {
+      font-size: 15px;
+    }
+  }
+}
+
+// 快速啟用
+// ---------------------------------
+.section-activation {
+  background-color: #4C4944;
+  background-image: url(../images/pattern-activation.png);
+  color: $white;
+  display: flex;
+
+  .heading2 {
+    border-bottom-color: $white;
+  }
+
+  // .splide--slide {
+  //   width: 100%;
+  //   .splide__slide {
+  //     margin: 10%;
+  //   }
+  // }
+
+  .splide__arrow {
+    top: 270px;
+    @include breakpoint(sm) {
+      top: vwm(270px);
+    }
+  }
+  // 背景插圖
+  &__decobox {
+		> * {
+			position: absolute;
+		}
+	}
+  &__cat-sofa {
+    $w: 311px;
+    $h: 239px;
+		@include size($w, $h);
+		top: $h;
+		left: calc(50% + #{px-em(-539)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+	}
+  &__cactus {
+    $w: 135px;
+    $h: 260px;
+		@include size($w, $h);
+		bottom: 45px;
+		right: calc(50% + #{px-em(-681)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+	}
+
+}
+// TAB
+.table__nav {
+  margin-bottom: 32px;
+  @include breakpoint(sm) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: vwm(32px);
+  }
+  .btn-round {
+    // width: 80%;
+    color: $btn-round-stroke;
+    font-size: 26px;
+    width: 460px;
+    text-align: center;
+    @include breakpoint(sm) {
+      // font-size: vwm(30px);
+      font-size: clamp(21px, 5vw, 30px);
+      width: vwm(490px);
+    }
+  }
+}
+
+.activate-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--screenshot {
+    margin: 4rem;
+    margin-bottom: 3rem;
+    @include breakpoint(sm) {
+      margin: 10%;
+    }
+
+    img {
+      border-radius: 13px;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &--text {
+    color: #FBECE3;
+    display: flex;
+    font-size: 30px;
+    gap: 1em;
+    line-height: 1.5;
+    @include breakpoint(sm) {
+      font-size: vwm(30px);
+      // font-size: clamp(16px, 4vw, 30px);
+    }
+
+    .step {
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      flex: 1 0 auto;
+    }
+
+    .desc {
+      font-weight: 100;
+      a {
+        border-bottom: 1px dotted;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// 帳戶優惠
+// ---------------------------------
+.section-benefits {
+  background: #DCD2BE;
+  background-image: url(../images/pattern-benefits.svg);
+  &.section {
+    @include breakpoint(sm) {
+      padding-top: 3.75rem;
+    }
+  }
+  // 背景插圖
+  &__decobox {
+		> * {
+			position: absolute;
+		}
+	}
+  &__plant {
+    $w: 129px;
+    $h: 332px;
+		@include size($w, $h);
+		top: 30%;
+		left: calc(50% + #{px-em(-697)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+	}
+  &__sofa {
+    $w: 440px;
+    $h: 190px;
+		@include size($w, $h);
+		bottom: 0;
+		right: calc(50% + #{px-em(-474)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+    z-index: 1;
+	}
+}
+
+.titlePanel {
+  background: $white;
+  border-radius: 12px;
+  border: 2px solid $color-brown-light;
+  box-shadow: px-em(16) px-em(16) 0 0 rgba(188, 134, 97, 0.2);
+  display: flex;
+  padding: px-em(90) px-em(50) px-em(50);
+  position: relative;
+  width: 100%;
+  max-width: px-em(1060);
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+  @include breakpoint(sm) {
+    margin-left: vwm(16px);
+    margin-right: vwm(16px);
+    margin-top: vwm(40px);
+    width: auto;
+    padding: vwm(50px);
+  }
+
+  &--title {
+    background: $color-brown-mid;
+    border-radius: .5rem;
+    color: $white;
+    font-size: 29px;
+    font-family: "MaruM", "Noto Sans TC", sans-serif;
+    padding: 10px 16px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    left: px-em(8);
+    @include breakpoint(sm) {
+      font-size: vwm(32px);
+    }
+  }
+
+  &--wrap {
+    display: flex;
+    gap: px-em(40);
+    width: 100%;
+    @include breakpoint(sm) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &--img {
+    flex: 1 0 28%;
+    @include breakpoint(sm) {
+      max-width: px-em(240);
+      margin: 0 auto;
+      margin-top: vwm(40px);
+    }
+  }
+
+  &--content {
+    h4 {
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+      @include breakpoint(lg) {
+        font-size: px-em(32);
+      }
+      // @include breakpoint(sm) {
+      //   font-size: px-em(32);
+      // }
+      @include breakpoint(xs) {
+        font-size: px-em(32,24);
+      }
+    }
+
+    p {
+      font-size: px-em(20, 18);
+      font-weight: 500;
+      line-height: 1.5;
+      @include breakpoint(sm) {
+        font-size: px-em(16);
+        text-align: left;
+        margin-bottom: vwm(30px);
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: .75px solid #ABAAAA;
+      color: #ABAAAA;
+      background-color: #ABAAAA;
+      height: .75px;
+      margin: 12px 0;
+    }
+
+    .reminder {
+      color: $color-reminder;
+      display: inline-block;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      @include breakpoint(sm) {
+        font-size: 20px;
+        text-align: left;
+      }
+
+      &::before {
+        content: '';
+        background: #FCFBE0;
+        top: 1em;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: inline-block;
+        height: auto;
+        position: absolute;
+        z-index: -1;
+      }
+
+      .text-large {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.95em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// FAQ
+// ---------------------------------
+.section-faq {
+  background-color: #F2F2F2;
+  color: $brown;
+
+  .heading2 {
+    font-family: $custom-font-en;
+  }
+  // 背景插圖
+  &__decobox {
+		> * {
+			position: absolute;
+		}
+	}
+  &__paintings {
+    $w: 190px;
+    $h: 303px;
+		@include size($w, $h);
+		top: px-em(110);
+		left: calc(50% + #{px-em(-630)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+	}
+  &__pot-plant {
+    $w: 193px;
+    $h: 215px;
+		@include size($w, $h);
+		bottom: calc(-1 * #{px-em(36)});
+		right: calc(50% + #{px-em(-695)} - #{$w});
+		animation: float1 6s ease-in-out infinite;
+    z-index: 1;
+	}
+}
+
+// 投資警語
+// ---------------------------------
+.section-notice {
+  background-color: $color-brown-dark;
+  color: $white;
+  @include breakpoint(sm) {
+  }
+
+  .notice-title {
+    border-bottom: none;
+    @include flex-center;
+    transition: transform 0.6s $cubic;
+    &::after {
+      content: '\e145';
+      font-family: 'Material Icons Outlined';
+      margin-left: 6px;
+    }
+  }
+
+  .notice-container {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    .notice-list {
+      padding-bottom: 60px;
+
+      @include breakpoint(sm) {
+        padding-top: 0px;
+      }
+
+      ul.inner {
+        padding-bottom: 0px;
+      }
+
+      li {
+        list-style: decimal;
+        line-height: 2;
+        font-size: px-em(18);
+        margin-left: 26px;
+        padding-left: 0;
+        text-align: justify;
+
+        @include breakpoint(sm) {
+          font-size: px-em(16);
+        }
+      }
+    }
+  }
+}
+.toggle--active {
+  .notice-title::after {
+    content: '\e15b';
+    font-family: 'Material Icons Outlined';
+  }
+}
+
+// 共用
+// ---------------------------------
+.section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include breakpoint(sm) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  &-kv {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include breakpoint(sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-notice {
+    padding-bottom: 0;
+
+    @include breakpoint(sm) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.heading2 {
+  border-bottom: 2px solid $color-brown-mid;
+  display: inline-block;
+  font-family: "MaruM", "Noto Sans TC", sans-serif;
+  font-size: px-em(50);
+  font-weight: $bold;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  // padding-bottom: 1rem;
+  width: px-em(320, 50);
+  @include breakpoint(md) {
+    font-size: vw(50px);
+  }
+
+  @include breakpoint(sm) {
+    // font-size: px-em(40);
+    font-size: clamp(26px, calc(3vw + 1.5rem), 50px);
+    margin-bottom: vwm(32px);
+  }
+}
+
+.heading3 {
+  display: block;
+  font-family: "MaruR", "Noto Sans TC", sans-serif;
+  font-size: px-em(30);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.35;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding-bottom: 1rem;
+  @include breakpoint(md) {
+    font-size: vw(36px);
+  }
+  @include breakpoint(sm) {
+    font-size: vwm(30px);
+    line-height: 1.5;
+    margin-bottom: vwm(36px);
+  }
+}
+
+.fc-brown {
+  color: $color-brown-mid;
+}
+.fc-reminder {
+  color: $color-reminder;
+}
+
+.splide {
+  max-width: px-em(1200);
+  margin: 0 auto;
+
+  &__track {
+    // @include breakpoint(sm) {
+    //   padding-bottom: 20px;
+    // }
+  }
+
+  // &__pagination {
+  //   bottom: 0;
+
+  //   li {
+  //     margin: 0 6px;
+
+  //     &:only-child {
+  //       display: none;
+  //     }
+  //   }
+
+  //   &__page {
+  //     opacity: 1;
+  //     width: 14px;
+  //     height: 14px;
+  //     background-color: transparent;
+  //     border: 2px solid $white;
+
+  //     &.is-active {
+  //       transform: none;
+  //     }
+  //   }
+  // }
+
+  &__slide {
+    @include breakpoint(ssm) {
+      opacity: 0.8;
+      transition: opacity 0.25s;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__arrows {
+    svg {
+      display: none;
+      // fill: $white;
+    }
+  }
+
+  &__arrow {
+    // top: px-em(320);
+    width: px-em(54);
+    height: px-em(54);
+    @include breakpoint(sm) {
+      @include size(vwm(54px))
+    }
+    &[disabled] {
+      opacity: 0;
+    }
+    &--next {
+      right: calc(-1 * #{px-em(54)});
+      @include breakpoint(sm) {
+        right: 0;
+      }
+      &::before {
+        content: url('../images/icon-nav-right.svg');
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--prev {
+      left: calc(-1 * #{px-em(54)});
+      @include breakpoint(sm) {
+        left: 0;
+      }
+      &::before {
+        content: url('../images/icon-nav-left.svg');
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// 共用按鈕
+.btn-round {
+  background: $btn-round-fill;
+  border: 3px solid $btn-round-stroke;
+  border-radius: 40px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 30px;
+  font-family: "MaruM", "Noto Sans TC", sans-serif;
+  font-weight: bold;
+  padding: .5em 1em;
+  transition: background .3s linear, transform .1s linear;
+
+  @include breakpoint(sm) {
+    // font-size: px-em(30);
+    font-size: clamp(18px, calc(1vw + 1rem), 30px);
+  }
+
+  &:hover {
+    background-color: $color-brown-mid;
+    transform: scale(1.05);
+  }
+
+  &.active {
+    background: $white;
+    color: $btn-round-fill;
+  }
+
+  &--arrow {
+    background-image: url('../images/icon-round-arrow-right.svg');
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    background-position: right .75em center;
+    padding-right: 2em;
+  }
+}
+
+// TAB
+.con__table--box {
+  margin: 0 auto;
+  // width: px-em(650);
+  width: 100%;
+  max-width: 650px;
+  @include breakpoint(sm) {
+    width: 90vw;
+  }
+  ul.table__nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    @include breakpoint(sm) {
+      font-size: 2rem;
+      gap: vwm(36px);
+    }
+  }
+}
+
+.table__con {
+  color: #fff;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

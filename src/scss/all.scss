@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// generall setting
+@import "vendors/reset";
+@import "vendors/variables";
+@import "vendors/typography";
+@import "vendors/mixins";
+@import "vendors/function";
+
+@import "vendors/bootstrap4/bootstrap-grid.scss"; // grid system
+
+//layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/layout";
+
+//component
+@import "component/public";
+@import "component/icon";
+@import "component/keyframe";
+@import "component/toggle";
+@import "component/loading_dawho";
+// @import "component/animate";
+@import "component/lightbox";
+@import "component/form";
+
+//pages
+@import "pages/index";

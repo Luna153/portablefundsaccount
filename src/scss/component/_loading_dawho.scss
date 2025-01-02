@@ -1,0 +1,41 @@
+
+	// dawho loading
+	#overlayer {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		z-index: 1001;
+		background: #ffffff;
+	}
+
+	.loader {
+		position: fixed;
+		z-index: 1003;
+		top: 50%;
+		margin-top: -115px;
+		left: 50%;
+		margin-left: -86.5px;
+	}
+
+	.dawho-logo {
+		width: 173px;
+		height: 177px;
+		img {
+			width: 173px;
+			height: 177px;
+		}
+	}
+
+	.loading {
+		position: relative;
+		margin-top: -170px;
+		img {
+			width: 173px;
+			height: 173px;
+		}
+	}
+
+  .sinopac-logo {
+    width: 173px;
+    height: 177px;
+}

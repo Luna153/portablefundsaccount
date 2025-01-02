@@ -1,0 +1,87 @@
+mixin section-kv()
+  section.section.section-kv
+    .wrap__inner-kv
+      .section-kv__title
+        .kv-illustration2__wrap
+          img.section-kv__title-img(src=root+'images/img-kv-illustration-2.svg' , alt="")
+        .kv-maintitle__wrap
+          .kv-maintitle__group
+            img.kv-img--ribbon(src=root+'images/img-kv-title-ribbon.svg' , alt="退休信託帳戶可攜  投資基金跨行移轉")
+            img.kv-img--topic(src=root+'images/img-kv-title-topic.svg' , alt="基金攜著GO")
+            .kv-text 來永豐享基金定時(不)定額申購手續費
+            .kv-text-group
+              img.kv-img--zero(src=root+'images/img-kv-title-zero.svg' , alt="")
+              span.kv-text 元
+            a.btn-round.btn-round--arrow(href="#section-exclusive") 瞭解詳情
+        .kv-illustration1__wrap
+          .section-kv__decobox.hidden-min
+            include ../../../images/img-kv-illustration-1.svg
+          img.section-kv__title-img.hidden-max(src=root+'images/img-kv-illustration-1-mobile.svg' , alt="")
+
+    section#section-crossbank.section.section-crossbank
+      .wrap__inner
+        .align-center
+          h2.heading2(data-aos="fade-up" data-aos-duration="1200") 跨行
+            span.fc-brown 理財
+          h3.heading3(data-aos="fade-up" data-aos-duration="1500") 總是為轉換往來銀行，導致投資中斷感到頭痛？
+            br
+            | 基金投資庫存不必再因計畫變動而忍痛賣出
+
+        .splide.slider-crossbank
+          .splide__arrows
+            button.splide__arrow.splide__arrow--prev
+              img(src=root+'images/icon-nav-left--brown.svg' alt="")
+            button.splide__arrow.splide__arrow--next
+              img(src=root+'images/icon-nav-right--brown.svg' alt="")
+          .splide__track
+            ol.row.crossbank-card.splide__list
+              .splide__slide(data-aos="fade-up" data-aos-duration="800")
+                li.crossbank-card__card-item
+                  .crossbank-card__card-inner
+                    .card-front
+                      h4 任職工作轉換
+                      hr
+                      p 轉換服務企業對應搭配
+                        br
+                        | 不同薪轉銀行，
+                        br
+                        | 投資扣款帳號需配合異動
+                    .card-back
+                      img.crossbank-card__img(src=root+'images/img-crossbank-1.svg' alt="")
+                      p 薪轉由他行變更為永豐銀行， 他行扣款基金轉入永豐銀行續扣，投資績效不中斷！
+              .splide__slide(data-aos="fade-up" data-aos-duration="1000")
+                li.crossbank-card__card-item
+                  .crossbank-card__card-inner
+                    .card-front
+                      h4 投資部位分散
+                      hr
+                      p 投資信託帳戶
+                        br
+                        | 分散多家往來銀行，
+                        br
+                        | 導致資產管理無法集中
+                    .card-back
+                      img.crossbank-card__img(src=root+'images/img-crossbank-2.svg' alt="")
+                      p 永豐銀行理財產品完整，將基金投資攜入永豐，集中帳戶管理，讓投資更輕鬆！
+              .splide__slide(data-aos="fade-up" data-aos-duration="1200")
+                li.crossbank-card__card-item
+                  .crossbank-card__card-inner
+                    .card-front
+                      h4 服務喜好改變
+                      hr
+                      p 其他銀行服務不再適合，
+                        br
+                        | 希望嘗試
+                        br
+                        | 永豐銀行理財
+                    .card-back
+                      img.crossbank-card__img(src=root+'images/img-crossbank-3.svg' alt="")
+                      p 不論專人或是線上功能，選擇永豐提供快速便捷服務！
+        .button-group
+          a.btn-round.btn-round--arrow(href="https://mma.sinopac.com/Fund/FundQueries/PortableStatus_First.aspx" target="_blank") 理財進度「攜」著 GO
+          a.btn-round.btn-round--arrow.l-open(href="#TermsRetireTrust") 退休信託帳戶可攜注意事項
+      .section-kv__decobox
+        .section-kv__handbag.hidden-min
+          img(src=root+'images/img-bg-handbag.svg' alt="")
+        .section-kv__pens.hidden-min
+          img(src=root+'images/img-bg-pens.svg' alt="")

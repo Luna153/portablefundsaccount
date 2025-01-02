@@ -1,0 +1,151 @@
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float1 {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translatey(-15px);
+  }
+
+  50% {
+    transform: translatey(0px);
+  }
+
+  100% {
+    transform: translatey(-15px);
+  }
+}
+
+// @keyframes shinyStart {
+//   0% {
+//     -webkit-transform: scale(0.8);
+//     transform: scale(0.8);
+//   }
+
+//   30% {
+//     -webkit-transform: scale(0.5);
+//     transform: scale(0.5);
+//   }
+
+//   50% {
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//   }
+
+//   70% {
+//     -webkit-transform: scale(0.5);
+//     transform: scale(0.5);
+//   }
+
+//   100% {
+//     -webkit-transform: scale(0.8);
+//     transform: scale(0.8);
+//   }
+// }
+
+// 卡片靜止時動畫
+// @keyframes flipHint {
+//   0% {
+//     transform: perspective(1000px) rotateY(0deg);
+//   }
+
+//   100% {
+//     transform: perspective(1000px) rotateY(-8deg);
+//   }
+// }
+// Pulse
+@keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15)
+  }
+
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+}
+
+// FadeIn
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+// FadeInUp
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px)
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+// FadeInUp
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px)
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Wave
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
